@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #fff;
+  color: #333;
+  overflow-x: hidden;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  text-align: left;
+}
+
+.hero-text h1 {
+  font-weight: lighter;
+}
+
+.hero-text p {
+  font-weight: lighter;
+  color: #706f6f;
+}
+
+.hero .btn {
+  background-color: rgb(116, 200, 211);
+  color: black;
+}
+
+.hero .btn:hover{
+  background-color: white;
+  border: 2px solid black;
+}
+
+.services h3 {
+  font-weight: lighter;
+  color: #706f6f;
+  text-align: center;
+}
+
+.services h1 {
+  font-weight: lighter;
+}
+
+.services p {
+  color: #706f6f;
+}
+
+.services .service-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.service-card {
+  flex: 1;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.services .service-grid .service-card h3 {
+  font-weight: 500;
+  color: black;
+  text-decoration: underline;
+  text-decoration-color: rgb(116, 200, 211);
+  text-decoration-thickness: 2px;
+}
+
+.achievements .achievements-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  font-weight: bold;
+}
+
+.achievements {
+  background: rgb(232, 227, 254);
+  max-width: 100vw;
+  margin: 0;
+  padding: 60px 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.achievements h1 {
+  font-weight: lighter;
+  color: black;
+}
+
+.achievements h3 {
+  font-weight: lighter;
+  color: #706f6f;
+}
+
+.achievements-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.achievement-card {
+  flex: 1 1 250px;
+  /* All cards flexible but equal min width */
+  max-width: 300px;
+  min-height: 200px;
+  /* Same height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-5px);
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: lighter;
+}
+
+.info-container img {
+  width: 50px;
+  height: 50px;
+}
+
+.counter {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffaa00;
+}
+
+.projects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+.projects .project-card {
+  background: #e6f0ff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 20px;
+  width: 1800px;
+  height: 250px;
+  max-width: 90%;
+}
+
+.project-card h1 {
+  font-weight: lighter;
+  color: black;
+}
+
+.project-card h3 {
+  font-weight: lighter;
+  color: #706f6f;
+}
+
+.project-card .btn {
+  background-color: #333;
+  color: white;
+}
+
+.project-card .btn:hover{
+  background-color: black;
+}
+
+
+.blog {
+  display: flex;
+  justify-content: center;   /* centers the card */
+  padding: 40px 20px;
+}
+
+.blog-section, .blog-section * { box-sizing: border-box; }
+
+.blog-card {
+  display: flex;
+  align-items: center;       /* vertical alignment */
+  background: #fff;
+  border: 1px solid #e5e5e5; /* light border like in screenshot */
+  border-radius: 12px;
+  max-width: 850px;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.blog-image {
+  flex: 0 0 140px;           /* fixed width image column */
+  margin-right: 20px;
+}
+
+.blog-image img {
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;        /* matches the soft rounded corners */
+  display: block;
+}
+
+.blog-content {
+  flex: 1;
+  text-align: left;
+}
+
+.blog-tag {
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.blog-content h2 {
+  font-size: 18px;
+  font-weight: 400;          /* lighter heading */
+  color: #222;
+  margin: 6px 0 10px;
+  line-height: 1.5;
+}
+
+.blog-author {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 12px;
+}
+
+.blog-link {
+  font-size: 14px;
+  font-weight: 400;
+  color: #706f6f;
+  text-decoration: underline;
+  text-decoration-color: rgb(116, 200, 211);
+  text-decoration-thickness: 2px;
+  transition: 0.3s;
+}
+
+.blog-link:hover {
+  color: #007bff;
+}
+
+
+.cta {
+  background: #324456;
+  color: white;
+  max-width: 100vw;
+  margin: 0;
+  padding: 60px 20px;
+  box-sizing: border-box
+}
+
+.cta h3 {
+  font-weight: lighter;
+}
+
+.cta h1 {
+  font-weight: 200;
+}
+
+.cta .btn {
+  background-color: rgb(116, 200, 211);
+  color: black;
+}
+
+.info-container {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  /* space between rows */
+  font-family: 'Poppins', sans-serif;
+
+  align-items: flex-start;
+  /* aligns content to left */
+  text-align: left;
+  /* makes text align left */
+}
+
+.info-row {
+  display: flex;
+  gap: 30px;
+}
+
+/* Existing styles remain as is... */
+
+/* ----------------- Responsive Styles ----------------- */
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .hero-text {
+    max-width: 90%;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .services .service-grid {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .service-card {
+    flex: 1 1 45%;
+    max-width: 48%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .hero-text h1 {
+    font-size: 24px;
+  }
+
+  .hero-text p {
+    font-size: 14px;
+  }
+
+  .services .service-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-card {
+    width: 100%;
+    max-width: 90%;
+  }
+
+  .achievements-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .achievement-card {
+    max-width: 90%;
+    width: 100%;
+  }
+
+  .projects .project-card {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .blog-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .blog-image {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .blog-content {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .cta h1 {
+    font-size: 22px;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 20px;
+  }
+
+  .hero-text p {
+    font-size: 13px;
+  }
+
+  .service-card h3 {
+    font-size: 16px;
+  }
+
+  .projects .project-card h1 {
+    font-size: 20px;
+  }
+
+  .projects .project-card h3 {
+    font-size: 14px;
+  }
+
+  .blog-content h2 {
+    font-size: 18px;
+  }
+
+  .cta h1 {
+    font-size: 18px;
+  }
+}

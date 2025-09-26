@@ -1,0 +1,288 @@
+/* FORM */
+
+/* Full-width section */
+.form-section {
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0px 40px;
+}
+
+/* Centered container */
+.form-container {
+  background: #fff;
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto 1% auto;
+  padding: 0 13%;
+}
+
+/* Small heading text */
+.form-small-heading {
+  font-size: 1.1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+/* Main heading */
+.form-title {
+  margin-bottom: 10px;
+  font-size: 2rem;
+  color: black;
+  font-weight: 400;
+}
+
+/* Description text */
+.form-description {
+  text-align: left;
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 52px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border: none;
+  border-bottom: 2px solid #000;
+  padding: 8px 5px;
+  font-size: 16px;
+  background: transparent;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-bottom: 2px solid #007bff;
+}
+
+textarea {
+  resize: none;
+  height: 46px;
+}
+
+button {
+  background-color: #4fc3dc;
+  color: black;
+  font-size: 16px;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+button:hover {
+  background-color: #3fb0c7;
+}
+
+.status {
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: green;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+
+
+
+/* MAP SECTION STYLES */
+.map-section {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 450px;
+  background-color: #ffffff;
+  border-top: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 70px;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+  padding: 40px 30px;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-info h2 {
+  margin-bottom: 25px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.contact-info p {
+  font-size: 1rem;
+  margin: 14px 0;
+  display: flex;
+  align-items: center;
+  line-height: 1.4;
+  color: #444;
+}
+
+.contact-info .icon {
+  margin-right: 12px;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.map-container {
+  flex: 2;
+  min-width: 350px;
+  height: 450px;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Tablet screens */
+@media (max-width: 992px) {
+  .contact-info {
+    padding: 30px 20px;
+  }
+
+  .contact-info h2 {
+    font-size: 1.4rem;
+  }
+
+  .contact-info p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 0 5%; /* reduce padding on smaller screens */
+  }
+  
+  .map-section {
+    flex-direction: column;
+  }
+
+  .map-container {
+    height: 300px;
+  }
+
+  .contact-info {
+    text-align: center;
+    align-items: center;
+  }
+
+  .contact-info p {
+    justify-content: center;
+  }
+}
+
+
+
+
+/* EXPLORE PROJECTS CARD STYLES */
+
+/* Section styling (full width, background color) */
+.explore-section {
+  background-color: #2f3e4f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+}
+
+/* Card container */
+.explore-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  width: 100%;
+  text-align: center;
+  padding: 50px 30px;
+}
+
+/* Title */
+.explore-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+/* Description text */
+.explore-description {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+/* Button */
+.explore-button {
+  background-color: #0095b6;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.explore-button:hover {
+  background-color: #007a96;
+}
+
+@media (max-width: 768px) {
+  .explore-card {
+    padding: 30px 20px;
+  }
+
+  .explore-title {
+    font-size: 1.5rem;
+  }
+
+  .explore-description {
+    font-size: 0.95rem;
+  }
+}

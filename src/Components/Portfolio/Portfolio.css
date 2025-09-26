@@ -1,0 +1,217 @@
+.portfolio-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.portfolio-section h1 {
+  font-weight: normal;
+  color: black;
+  margin-top: 60px;
+}
+
+.ourwork-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.ourwork-header h4 {
+  font-size: 20px;
+  font-weight: 400;
+  color: #888;
+}
+
+.ourwork-header h1 {
+  font-size: 40px;
+  font-weight: lighter;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+.ourwork-header p {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #888;
+  max-width: 700px;
+  margin: 0 auto;
+  padding-bottom: 100px;
+}
+
+.ourwork-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.ourwork-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+.ourwork-content {
+  flex: 1;
+}
+
+.ourwork-content h3 {
+  font-size: 20px;
+  text-align: left;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.ourwork-content p {
+  font-size: 15px;
+  text-align: left;
+  font-weight: 450;
+  color: #888;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.ourwork-tags {
+  margin-bottom: 20px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 6px 14px;
+  margin-right: 8px;
+  border-radius: 20px;
+  background: #e6f7ff;
+  color: #0077b6;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.read-more {
+  font-size: 15px;
+  font-weight: 500;
+  color: #0077b6;
+  text-decoration: none;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+/* -------- Responsive -------- */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .ourwork-header h1 {
+    font-size: 32px;
+  }
+
+  .ourwork-header p {
+    font-size: 18px;
+    padding-bottom: 60px;
+  }
+
+  .ourwork-card {
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .ourwork-image img {
+    max-width: 300px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .ourwork-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ourwork-content {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .ourwork-content h3,
+  .ourwork-content p {
+    text-align: center;
+  }
+
+  .ourwork-header h1 {
+    font-size: 26px;
+  }
+
+  .ourwork-header p {
+    font-size: 16px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .ourwork-header h1 {
+    font-size: 22px;
+  }
+
+  .ourwork-header p {
+    font-size: 14px;
+    padding-bottom: 40px;
+  }
+
+  .ourwork-content h3 {
+    font-size: 18px;
+  }
+
+  .ourwork-content p {
+    font-size: 13px;
+  }
+}
+
+/* CTA */
+.cta {
+  background: #324456;
+  color: white;
+  width: 100vw;                     
+  margin-left: calc(-50vw + 50%);   
+  padding: 60px 20px;
+  box-sizing: border-box;
+  text-align: center; 
+  margin-top: 10px;                
+}
+
+.cta h3 {
+  font-weight: lighter;
+  margin-bottom: 10px;
+}
+
+.cta h1 {
+  font-weight: 200;
+  color: white;
+  margin: 0;
+}
+
+.cta .btn {
+  background-color: rgb(116, 200, 211);
+  color: black;
+  margin-top: 20px;
+}
+
+/* Responsive CTA */
+@media (max-width: 768px) {
+  .cta h1 {
+    font-size: 22px;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta h1 {
+    font-size: 18px;
+  }
+}
