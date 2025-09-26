@@ -177,12 +177,12 @@
 .cta {
   background: #324456;
   color: white;
-  width: 100vw;                     
-  margin-left: calc(-50vw + 50%);   
+  width: 100%;              /* fixed (was 100vw causing scroll) */
+  margin: 0 auto;           /* center align */
   padding: 60px 20px;
   box-sizing: border-box;
-  text-align: center; 
-  margin-top: 10px;                
+  text-align: center;
+  margin-top: 10px;
 }
 
 .cta h3 {

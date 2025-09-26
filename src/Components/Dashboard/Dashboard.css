@@ -5,7 +5,7 @@ body {
   font-family: "Poppins", sans-serif;
   background: #fff;
   color: #333;
-  overflow-x: hidden;
+  overflow-x: hidden; /* fixed */
 }
 
 .hero {
@@ -30,7 +30,7 @@ body {
   color: black;
 }
 
-.hero .btn:hover{
+.hero .btn:hover {
   background-color: white;
   border: 2px solid black;
 }
@@ -79,7 +79,7 @@ body {
 
 .achievements {
   background: rgb(232, 227, 254);
-  max-width: 100vw;
+  max-width: 100%; /* fixed */
   margin: 0;
   padding: 60px 20px;
   box-sizing: border-box;
@@ -105,10 +105,8 @@ body {
 
 .achievement-card {
   flex: 1 1 250px;
-  /* All cards flexible but equal min width */
   max-width: 300px;
   min-height: 200px;
-  /* Same height */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -127,6 +125,10 @@ body {
   flex-direction: column;
   align-items: center;
   font-weight: lighter;
+  padding-top: 20px;
+  font-family: 'Poppins', sans-serif;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .info-container img {
@@ -153,9 +155,9 @@ body {
   border-radius: 10px;
   text-align: center;
   margin-top: 20px;
-  width: 1800px;
-  height: 250px;
-  max-width: 90%;
+  width: 100%;         /* fixed */
+  max-width: 1200px;   /* limit for large screens */
+  height: auto;        /* fixed */
 }
 
 .project-card h1 {
@@ -173,24 +175,21 @@ body {
   color: white;
 }
 
-.project-card .btn:hover{
+.project-card .btn:hover {
   background-color: black;
 }
 
-
 .blog {
   display: flex;
-  justify-content: center;   /* centers the card */
+  justify-content: center;
   padding: 40px 20px;
 }
 
-.blog-section, .blog-section * { box-sizing: border-box; }
-
 .blog-card {
   display: flex;
-  align-items: center;       /* vertical alignment */
+  align-items: center;
   background: #fff;
-  border: 1px solid #e5e5e5; /* light border like in screenshot */
+  border: 1px solid #e5e5e5;
   border-radius: 12px;
   max-width: 850px;
   width: 100%;
@@ -199,14 +198,14 @@ body {
 }
 
 .blog-image {
-  flex: 0 0 140px;           /* fixed width image column */
+  flex: 0 0 140px;
   margin-right: 20px;
 }
 
 .blog-image img {
-  width: 200px;
-  height: 200px;
-  border-radius: 8px;        /* matches the soft rounded corners */
+  max-width: 100%;  /* fixed */
+  height: auto;     /* fixed */
+  border-radius: 8px;
   display: block;
 }
 
@@ -225,7 +224,7 @@ body {
 
 .blog-content h2 {
   font-size: 18px;
-  font-weight: 400;          /* lighter heading */
+  font-weight: 400;
   color: #222;
   margin: 6px 0 10px;
   line-height: 1.5;
@@ -251,14 +250,13 @@ body {
   color: #007bff;
 }
 
-
 .cta {
   background: #324456;
   color: white;
-  max-width: 100vw;
+  max-width: 100%; /* fixed */
   margin: 0;
   padding: 60px 20px;
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 
 .cta h3 {
@@ -274,26 +272,10 @@ body {
   color: black;
 }
 
-.info-container {
-  padding-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 0px;
-  /* space between rows */
-  font-family: 'Poppins', sans-serif;
-
-  align-items: flex-start;
-  /* aligns content to left */
-  text-align: left;
-  /* makes text align left */
-}
-
 .info-row {
   display: flex;
   gap: 30px;
 }
-
-/* Existing styles remain as is... */
 
 /* ----------------- Responsive Styles ----------------- */
 @media (max-width: 1024px) {
@@ -375,6 +357,7 @@ body {
   .blog-image {
     max-width: 100%;
     width: 100%;
+    margin-right: 0;
   }
 
   .blog-content {
