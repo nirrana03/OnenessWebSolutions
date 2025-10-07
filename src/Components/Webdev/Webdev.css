@@ -1,0 +1,81 @@
+.services-container {
+  width: 100%;
+  padding: 20px;  /* reduced from 40px */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 40px 0;   /* reduced from 60px */
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.service-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.service-section:first-child {
+  margin-top: 0;
+}
+
+.service-text {
+  flex: 1;
+  min-width: 280px;
+  max-width: 600px;   /* ✅ keeps paragraphs readable */
+  line-height: 1.6;
+}
+
+.service-text h2 {
+  font-size: 24px;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+.service-text p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.service-image {
+  flex: 1;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  object-fit: cover;   /* ✅ keeps image inside box */
+}
+
+/* Make App Development content full width and justified */
+.web-dev .service-text {
+  max-width: 100% !important;   /* remove 600px restriction */
+  text-align: justify;          /* align text to both left & right */
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .service-section {
+    flex-direction: column !important;
+    text-align: center;
+    padding: 0 15px;  /* ✅ ensures no cut-off on small screens */
+  }
+  .service-text {
+    max-width: 100%;
+  }
+  .service-image {
+    margin-top: 20px;
+    max-width: 100%;
+  }
+}
+ 

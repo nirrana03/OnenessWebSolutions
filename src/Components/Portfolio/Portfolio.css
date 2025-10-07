@@ -202,6 +202,43 @@
   margin-top: 20px;
 }
 
+/* Slide-up animation */
+.hidden-card {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s ease-out;
+}
+
+.slide-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hidden before scroll */
+.hidden-card {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Slide up on view */
+.slide-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delay for cards */
+.ourwork-card:nth-child(2) {
+  transition-delay: 0.3s;
+}
+.ourwork-card:nth-child(3) {
+  transition-delay: 0.3s;
+}
+.cta {
+  transition-delay: 0.3s;
+}
+
+
 /* Responsive CTA */
 @media (max-width: 768px) {
   .cta h1 {

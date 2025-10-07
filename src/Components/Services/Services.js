@@ -1,12 +1,34 @@
 import React from "react";
+import { motion } from "framer-motion";
 import "./Services.css";
 import code from "../Assests/code.jpg";
 import design from "../Assests/design.jpg";
 import care from "../Assests/care.jpg";
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 60 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+};
+
+const popDot = {
+  hidden: { scale: 0 },
+  visible: { scale: 1, transition: { type: "spring", stiffness: 200 } },
+};
+
+const slideRight = {
+  hidden: { opacity: 0, x: 100 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+};
+
+const slideLeft = {
+  hidden: { opacity: 0, x: -100 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+};
+
 const Services = () => {
   return (
     <section className="services-section">
+      {/* Intro */}
       <div className="intro">
         <p className="subtitle">Our Services</p>
         <h1>We Design, Code and Care</h1>
@@ -17,14 +39,20 @@ const Services = () => {
         </p>
       </div>
 
+      {/* Timeline */}
       <div className="timeline">
-        {/* Design */}
-        <div className="timeline-item">
-          <div className="timeline-img">
+        {/* DESIGN */}
+        <motion.div
+          className="timeline-item"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <motion.div className="timeline-img" variants={slideLeft}>
             <img src={design} alt="Design" />
-          </div>
+          </motion.div>
 
-          <div className="timeline-content">
+          <motion.div className="timeline-content" variants={slideRight}>
             <h3>Design</h3>
             <p>
               Superior user experience for your digital product. From concept
@@ -36,19 +64,29 @@ const Services = () => {
               <li>Detailed UI Design</li>
             </ul>
             <a href="#">See All →</a>
-          </div>
+          </motion.div>
 
-          {/* dot moved outside content so it can be positioned relative to .timeline-item */}
-          <span className="timeline-dot blue" />
-        </div>
+          <motion.span
+            className="timeline-dot blue"
+            variants={popDot}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          />
+        </motion.div>
 
-        {/* Code */}
-        <div className="timeline-item">
-          <div className="timeline-img">
+        {/* CODE */}
+        <motion.div
+          className="timeline-item"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <motion.div className="timeline-img" variants={slideLeft}>
             <img src={code} alt="Code" />
-          </div>
+          </motion.div>
 
-          <div className="timeline-content">
+          <motion.div className="timeline-content" variants={slideRight}>
             <h3>Code</h3>
             <p>
               Agile development of mobile apps, websites and cloud services with
@@ -61,18 +99,29 @@ const Services = () => {
               <li>Back-end and Cloud</li>
             </ul>
             <a href="#">See All →</a>
-          </div>
+          </motion.div>
 
-          <span className="timeline-dot orange" />
-        </div>
+          <motion.span
+            className="timeline-dot orange"
+            variants={popDot}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          />
+        </motion.div>
 
-        {/* Care */}
-        <div className="timeline-item">
-          <div className="timeline-img">
+        {/* CARE */}
+        <motion.div
+          className="timeline-item"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <motion.div className="timeline-img" variants={slideLeft}>
             <img src={care} alt="Care" />
-          </div>
+          </motion.div>
 
-          <div className="timeline-content">
+          <motion.div className="timeline-content" variants={slideRight}>
             <h3>Care</h3>
             <p>
               Continuous services to support your operational phase. We make
@@ -84,20 +133,39 @@ const Services = () => {
               <li>Maintenance</li>
             </ul>
             <a href="#">See All →</a>
-          </div>
+          </motion.div>
 
-          <span className="timeline-dot dark" />
-        </div>
+          <motion.span
+            className="timeline-dot dark"
+            variants={popDot}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          />
+        </motion.div>
       </div>
 
       {/* CTA */}
-      <section className="cta">
+      <motion.section
+        className="cta"
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <h3>Have an idea?</h3>
         <h1>Let's build together and make it reality.</h1>
         <button className="btn">Get in Touch</button>
-      </section>
+      </motion.section>
 
-      <section className="services">
+      {/* SERVICES */}
+      <motion.section
+        className="services"
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <h3>Values</h3>
         <h1>
           We are driven by a set of core values that shape our company culture
@@ -107,11 +175,11 @@ const Services = () => {
           <div className="service-card">
             <h3>Collaboration</h3>
             <p>
-              We belive in the power of collaboration, where ideas are freely
-              shared, and teamwork is encouraged.We work closely with our
-              clients,involving them in the decision-making process and ensuring
-              that their input is valued and incorporated into the final
-              deliverables.
+              We believe in the power of collaboration, where ideas are freely
+              shared, and teamwork is encouraged. We work closely with our
+              clients, involving them in the decision-making process and
+              ensuring that their input is valued and incorporated into the
+              final deliverables.
             </p>
           </div>
           <div className="service-card">
@@ -119,24 +187,22 @@ const Services = () => {
             <p>
               We have a strong commitment to quality in everything we do. We
               take pride in delivering high-quality solutions that meet the
-              highest standards of excellence.We pay meticulous attention to
-              detail, ensuring that every project is executed with precision and
-              meets the unique requirements of our clients.
+              highest standards of excellence. We pay meticulous attention to
+              detail, ensuring that every project meets the unique requirements
+              of our clients.
             </p>
           </div>
           <div className="service-card">
             <h3>Growth</h3>
             <p>
-              We foster a culture of continous growth, where we encourage
-              learning,continous improvemnt, and adaptation.We are committed to
-              staying ahead of the curve and continuously enhancing our
-              skills,knowledge and processes to ensure that we provide the best
-              solutions and services to our clients.
+              We foster a culture of continuous growth, encouraging learning and
+              adaptation. We are committed to staying ahead of the curve to
+              ensure that we provide the best solutions and services to our
+              clients.
             </p>
           </div>
         </div>
-         </section>
-     
+      </motion.section>
     </section>
   );
 };

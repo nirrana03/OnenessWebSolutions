@@ -8,6 +8,12 @@ import Services from "./Components/Services/Services";
 import Portfolio from "./Components/Portfolio/Portfolio";
 import Contact from "./Components/Contact us/Contactus";
 import Blog from "./Components/Blog/Blog";
+import Appdev from "./Components/Appdev/Appdev"
+import UiUx from "./Components/Uiux/Uiux"
+import Ecommerce from "./Components/E-Commerce/ECommerce"
+import Webdev from "./Components/Webdev/Webdev"
+import Digital from "./Components/Digital Marketing/digi"
+import Quality  from  "./Components/Quality Analyst/Quality"
 
 import "./App.css";
 
@@ -22,6 +28,15 @@ function App() {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/appdev" element={<Appdev />} />
+        <Route path="/webdev" element={<Webdev />} />
+        <Route path="/quality-analyst" element={<Quality />} />
+        <Route path="/digi-marketing" element={<Digital />} />
+        <Route path="/uiux" element={<UiUx />} />
+        <Route path="/e-commerce" element={<Ecommerce />} />
+
+
+
 
       </Routes>
       <Footer />
