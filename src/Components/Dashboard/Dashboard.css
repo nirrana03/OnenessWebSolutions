@@ -40,6 +40,12 @@ html,body {
   border: 2px solid black;
 }
 
+.services{
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0 auto;
+}
+
 .services h3 {
   font-weight: lighter;
   color: #706f6f;
