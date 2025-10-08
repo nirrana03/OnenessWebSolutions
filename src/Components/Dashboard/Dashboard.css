@@ -449,6 +449,7 @@ html,body {
   .services {
     padding: 20px;
     text-align: center;
+    overflow-x: hidden; /* prevent any horizontal overflow */
   }
 
   .services h1 {
@@ -464,14 +465,17 @@ html,body {
   }
 
   .services .service-grid {
-    flex-direction: column; /* stack the cards */
-    align-items: center; /* center align cards */
+    flex-direction: column;
+    align-items: center;
     gap: 15px;
+    width: 100%;
+    margin: 0 auto;
   }
 
   .service-card {
-    width: 90%;
+    width: 100%;
     max-width: 350px;
     text-align: center;
+    box-sizing: border-box; /* ensure padding doesn't increase width */
   }
 }
