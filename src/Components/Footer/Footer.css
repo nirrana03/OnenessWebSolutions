@@ -1,7 +1,9 @@
+/* Base Footer */
 .footer {
   background: #fff;
-  padding: 30px 15px;  /* reduced padding */
+  padding: 30px 15px;
   border-top: 1px solid #eee;
+  overflow-x: hidden;
 }
 
 .footer-container {
@@ -10,7 +12,7 @@
   justify-content: space-between;
   max-width: 1200px;
   margin: auto;
-  gap: 20px; /* reduced gap */
+  gap: 20px;
 }
 
 .footer-section {
@@ -23,14 +25,14 @@
 }
 
 .footer-logo {
-  width: 220px; /* smaller logo */
+  width: 220px;
   height: auto;
   margin-bottom: 8px;
 }
 
 .footer-section h3 {
   font-size: 15px;
-  margin-bottom: 10px; /* less space */
+  margin-bottom: 10px;
   font-weight: 600;
 }
 
@@ -41,7 +43,7 @@
 }
 
 .footer-section ul li {
-  margin-bottom: 6px; /* less line spacing */
+  margin-bottom: 6px;
 }
 
 .footer-section ul li a {
@@ -57,19 +59,19 @@
 
 .footer-section p {
   font-size: 13px;
-  margin: 4px 0; /* tighter text */
+  margin: 4px 0;
   color: #333;
 }
 
 .social-icons {
   display: flex;
-  gap: 10px; /* reduced spacing */
+  gap: 10px;
   margin-top: 8px;
   flex-wrap: wrap;
 }
 
 .social-icon {
-  width: 18px;  
+  width: 18px;
   height: 18px;
   object-fit: contain;
   transition: transform 0.3s ease;
@@ -79,7 +81,7 @@
   transform: scale(1.15);
 }
 
-/* -------- Responsive -------- */
+/* ---------------- Responsive ---------------- */
 
 /* Tablet */
 @media (max-width: 1024px) {
@@ -94,30 +96,39 @@
     font-size: 12px;
   }
 }
+
 /* Mobile */
 @media (max-width: 768px) {
   .footer {
-    padding: 20px 10px; /* reduce top-bottom padding */
+    padding: 15px 10px; /* tighter padding */
   }
 
   .footer-container {
     flex-direction: column;
-    text-align: center;
     align-items: center;
-    gap: 8px; /* less gap between sections */
+    text-align: center;
+    gap: 6px; /* reduced gap between sections */
   }
 
   .footer-section {
-    margin-bottom: 8px; /* reduced bottom spacing */
+    margin-bottom: 4px; /* less spacing */
+  }
+
+  .logo-section {
+    margin-bottom: 0; /* remove extra space under logo */
+  }
+
+  .footer-section:first-of-type + .footer-section {
+    margin-top: 0;
   }
 
   .footer-section h3 {
-    margin-bottom: 6px; /* less space below headings */
+    margin-bottom: 6px;
     font-size: 14px;
   }
 
   .footer-section ul li {
-    margin-bottom: 4px; /* reduce line spacing */
+    margin-bottom: 4px;
   }
 
   .footer-section ul li a,
@@ -127,12 +138,12 @@
 
   .social-icons {
     justify-content: center;
-    gap: 6px; /* tighter icon spacing */
-    margin-top: 4px; /* reduce space above icons */
+    gap: 6px;
+    margin-top: 4px;
   }
 
   .footer-logo {
-    width: 160px; /* slightly smaller logo for mobile */
+    width: 160px;
     margin-bottom: 4px;
   }
 }
@@ -140,15 +151,15 @@
 /* Small Mobile */
 @media (max-width: 480px) {
   .footer {
-    padding: 15px 8px; /* even tighter padding */
+    padding: 10px 8px;
   }
 
   .footer-container {
-    gap: 6px;
+    gap: 4px;
   }
 
   .footer-section {
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
 
   .footer-section h3 {
@@ -167,28 +178,5 @@
 
   .footer-logo {
     width: 150px;
-  }
-}
-
-@media (max-width: 768px) {
-  /* Reduce extra space below logo section */
-  .logo-section {
-    margin-bottom: 0 !important; /* remove bottom gap */
-  }
-
-  /* Reduce top space of the next section */
-  .footer-section:first-of-type + .footer-section {
-    margin-top: 0 !important;
-  }
-
-  /* Make sure gap is tighter overall */
-  .footer-container {
-    gap: 4px !important; /* very small spacing between all sections */
-  }
-
-  /* Reduce padding to bring everything closer */
-  .footer {
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
   }
 }

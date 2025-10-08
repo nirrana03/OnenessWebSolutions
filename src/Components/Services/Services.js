@@ -26,6 +26,37 @@ const slideLeft = {
 };
 
 const Services = () => {
+  const timelineData = [
+    {
+      title: "Design",
+      img: design,
+      content:
+        "Superior user experience for your digital product. From concept definition to UI design, we engage the real end users.",
+      list: [
+        "Research and Understanding",
+        "Sketching and Validation",
+        "Detailed UI Design",
+      ],
+      dotClass: "blue",
+    },
+    {
+      title: "Code",
+      img: code,
+      content:
+        "Agile development of mobile apps, websites and cloud services with a quality mindset. We utilize the latest open-source tech to make your software work.",
+      list: ["Mobile App Development", "Web Development", "Back-end and Cloud"],
+      dotClass: "orange",
+    },
+    {
+      title: "Care",
+      img: care,
+      content:
+        "Continuous services to support your operational phase. We make sure your software runs smoothly and is improved over time.",
+      list: ["Further Development", "Support Services", "Maintenance"],
+      dotClass: "dark",
+    },
+  ];
+
   return (
     <section className="services-section">
       {/* Intro */}
@@ -41,108 +72,49 @@ const Services = () => {
 
       {/* Timeline */}
       <div className="timeline">
-        {/* DESIGN */}
-        <motion.div
-          className="timeline-item"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          <motion.div className="timeline-img" variants={slideLeft}>
-            <img src={design} alt="Design" />
-          </motion.div>
-
-          <motion.div className="timeline-content" variants={slideRight}>
-            <h3>Design</h3>
-            <p>
-              Superior user experience for your digital product. From concept
-              definition to UI design, we engage the real end users.
-            </p>
-            <ul>
-              <li>Research and Understanding</li>
-              <li>Sketching and Validation</li>
-              <li>Detailed UI Design</li>
-            </ul>
-            <a href="#">See All →</a>
-          </motion.div>
-
-          <motion.span
-            className="timeline-dot blue"
-            variants={popDot}
+        {timelineData.map((item, index) => (
+          <motion.div
+            className="timeline-item"
+            key={index}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
-          />
-        </motion.div>
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            {/* Image */}
+            <motion.div
+              className="timeline-img"
+              variants={window.innerWidth > 768 ? slideLeft : fadeUp}
+            >
+              <img src={item.img} alt={item.title} />
+            </motion.div>
 
-        {/* CODE */}
-        <motion.div
-          className="timeline-item"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          <motion.div className="timeline-img" variants={slideLeft}>
-            <img src={code} alt="Code" />
+            {/* Content */}
+            <motion.div
+              className="timeline-content"
+              variants={window.innerWidth > 768 ? slideRight : fadeUp}
+            >
+              <h3>{item.title}</h3>
+              <p>{item.content}</p>
+              <ul>
+                {item.list.map((li, idx) => (
+                  <li key={idx}>{li}</li>
+                ))}
+              </ul>
+              <a href="#">See All →</a>
+            </motion.div>
+
+            {/* Dot only for desktop */}
+            {window.innerWidth > 768 && (
+              <motion.span
+                className={`timeline-dot ${item.dotClass}`}
+                variants={popDot}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              />
+            )}
           </motion.div>
-
-          <motion.div className="timeline-content" variants={slideRight}>
-            <h3>Code</h3>
-            <p>
-              Agile development of mobile apps, websites and cloud services with
-              a quality mindset. We utilize the latest open-source tech to make
-              your software work.
-            </p>
-            <ul>
-              <li>Mobile App Development</li>
-              <li>Web Development</li>
-              <li>Back-end and Cloud</li>
-            </ul>
-            <a href="#">See All →</a>
-          </motion.div>
-
-          <motion.span
-            className="timeline-dot orange"
-            variants={popDot}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          />
-        </motion.div>
-
-        {/* CARE */}
-        <motion.div
-          className="timeline-item"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          <motion.div className="timeline-img" variants={slideLeft}>
-            <img src={care} alt="Care" />
-          </motion.div>
-
-          <motion.div className="timeline-content" variants={slideRight}>
-            <h3>Care</h3>
-            <p>
-              Continuous services to support your operational phase. We make
-              sure your software runs smoothly and is improved over time.
-            </p>
-            <ul>
-              <li>Further Development</li>
-              <li>Support Services</li>
-              <li>Maintenance</li>
-            </ul>
-            <a href="#">See All →</a>
-          </motion.div>
-
-          <motion.span
-            className="timeline-dot dark"
-            variants={popDot}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          />
-        </motion.div>
+        ))}
       </div>
 
       {/* CTA */}
@@ -158,7 +130,7 @@ const Services = () => {
         <button className="btn">Get in Touch</button>
       </motion.section>
 
-      {/* SERVICES */}
+      {/* Services */}
       <motion.section
         className="services"
         variants={fadeUp}
