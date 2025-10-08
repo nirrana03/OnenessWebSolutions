@@ -169,3 +169,26 @@
     width: 150px;
   }
 }
+
+@media (max-width: 768px) {
+  /* Reduce extra space below logo section */
+  .logo-section {
+    margin-bottom: 0 !important; /* remove bottom gap */
+  }
+
+  /* Reduce top space of the next section */
+  .footer-section:first-of-type + .footer-section {
+    margin-top: 0 !important;
+  }
+
+  /* Make sure gap is tighter overall */
+  .footer-container {
+    gap: 4px !important; /* very small spacing between all sections */
+  }
+
+  /* Reduce padding to bring everything closer */
+  .footer {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+}

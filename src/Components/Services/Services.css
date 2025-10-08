@@ -225,103 +225,157 @@ body {
 }
 
 /* ---------- Responsive Tweaks ---------- */
-
 /* Tablet (≤1024px) */
 @media (max-width: 1024px) {
-  .intro h1 { font-size: 32px; }
-  .intro .desc { font-size: 18px; padding-bottom: 100px; }
+  .intro h1 {
+    font-size: 32px;
+  }
 
-  .timeline-img img { max-width: 200px; }
+  .intro .desc {
+    font-size: 18px;
+    padding-bottom: 100px;
+  }
 
-  .services .service-grid { flex-wrap: wrap; }
-  .service-card { flex: 1 1 45%; max-width: 48%; }
+  .timeline-img img {
+    max-width: 200px;
+  }
+
+  .services .service-grid {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .service-card {
+    flex: 1 1 45%;
+    max-width: 48%;
+  }
 }
 
 /* Mobile (≤768px) */
-@media (max-width: 768px) {
-  .intro h1 { font-size: 26px; }
-  .intro .desc { font-size: 16px; padding-bottom: 60px; }
-
-  .timeline { margin-top: 20px; }
-  .timeline-item { flex-direction: column; align-items: flex-start; margin: 40px 0; }
-  .timeline-img img { max-width: 180px; }
-
-  .timeline-content { padding: 10px 0 0 0; }
-
-  .services .service-grid { flex-direction: column; gap: 15px; }
-  .service-card { width: 100%; max-width: 100%; }
-
-  .cta h1 { font-size: 22px; line-height: 1.4; }
-}
-
-/* Small Mobile (≤480px) */
-@media (max-width: 480px) {
-  .intro h1 { font-size: 22px; }
-  .intro .desc { font-size: 14px; padding-bottom: 40px; }
-
-  .timeline-img img { max-width: 150px; }
-  .timeline-content h3 { font-size: 22px; }
-  .timeline-content p,
-  .timeline-content ul li { font-size: 14px; }
-
-  .cta h1 { font-size: 18px; }
-}
-
-/* ===== Final Mobile Center Alignment Fix ===== */
 @media (max-width: 768px) {
   .services-section {
     padding: 40px 15px;
     text-align: center;
   }
 
+  .intro h1 {
+    font-size: 26px;
+  }
+
+  .intro .desc {
+    font-size: 16px;
+    padding-bottom: 60px;
+  }
+
+  /* TIMELINE */
+  .timeline {
+    margin-top: 20px;
+  }
 
   .timeline::before {
-    left: 50% !important;
-    transform: translateX(-50%) !important;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
   }
 
   .timeline-item {
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    margin: 30px 0 !important;
-    padding-left: 0 !important;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 60px 0;
+  }
+
+  .timeline-img {
+    order: 0;
+    margin-bottom: 15px;
   }
 
   .timeline-img img {
-    margin: 0 auto !important;
+    max-width: 200px;
+    width: 80%;
   }
 
   .timeline-content {
-    margin: 0 auto !important;
-    padding: 10px 0 !important;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+
+  .timeline-content h3 {
+    font-size: 24px;
+  }
+
+  .timeline-content ul {
+    text-align: left;
+    display: inline-block; /* keeps it neat under center text */
   }
 
   .timeline-dot {
-    left: 50% !important;
-    transform: translateX(-50%) !important;
+    display: none; /* hide dot line in mobile for cleaner look */
+  }
+
+  /* SERVICES */
+  .services {
+    text-align: center;
+  }
+
+  .services .service-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
   }
 
   .service-card {
-    text-align: center !important;
-    margin: 0 auto !important;
+    width: 100%;
+    max-width: 360px;
   }
 
+  .service-card h3 {
+    text-align: center;
+  }
+
+  /* CTA */
   .cta {
-    text-align: center !important;
-    padding: 50px 20px !important;
+    padding: 40px 20px;
   }
 
-  .cta h1, .cta h3 {
-    text-align: center !important;
+  .cta h1 {
+    font-size: 22px;
+    line-height: 1.4;
   }
 }
 
+/* Small Mobile (≤480px) */
 @media (max-width: 480px) {
-  .timeline-img img {
-    max-width: 140px !important;
+  .intro h1 {
+    font-size: 22px;
   }
+
   .intro .desc {
-    padding-bottom: 30px !important;
+    font-size: 14px;
+    padding-bottom: 40px;
+  }
+
+  .timeline-img img {
+    max-width: 160px;
+  }
+
+  .timeline-content h3 {
+    font-size: 20px;
+  }
+
+  .timeline-content p,
+  .timeline-content ul li {
+    font-size: 14px;
+  }
+
+  .service-card {
+    padding: 16px;
+  }
+
+  .cta h1 {
+    font-size: 18px;
   }
 }
