@@ -466,3 +466,72 @@ html,body {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ----------------- Mobile Alignment Fixes ----------------- */
+@media (max-width: 768px) {
+
+  /* Prevent content from touching edges or cutting off */
+  .dashboard,
+  .hero,
+  .services,
+  .achievements,
+  .projects,
+  .blog,
+  .cta {
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    margin: 0 auto;
+  }
+
+  /* Ensure everything centers properly */
+  .hero-text,
+  .service-card,
+  .achievement-card,
+  .project-card,
+  .blog-card,
+  .cta {
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Fix blog image and text alignment */
+  .blog-image img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Make sure buttons stay centered */
+  .btn {
+    display: inline-block;
+    margin: 10px auto;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Reduce overflow and ensure central layout */
+  .dashboard,
+  .hero,
+  .services,
+  .achievements,
+  .projects,
+  .blog,
+  .cta {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .service-card,
+  .achievement-card,
+  .project-card,
+  .blog-card {
+    width: 100%;
+    max-width: 95%;
+    margin: 0 auto;
+  }
+}
