@@ -274,17 +274,6 @@ body {
     text-align: center;
   }
 
-  .intro,
-  .timeline,
-  .timeline-item,
-  .timeline-content,
-  .timeline-img,
-  .service-grid,
-  .cta {
-    text-align: center !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
 
   .timeline::before {
     left: 50% !important;
@@ -305,7 +294,6 @@ body {
 
   .timeline-content {
     margin: 0 auto !important;
-    text-align: center !important;
     padding: 10px 0 !important;
   }
 
