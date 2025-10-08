@@ -335,16 +335,6 @@ html,body {
     height: auto;
     border-radius: 10px;
   }
-
-  .services .service-grid {
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-
-  .service-card {
-    flex: 1 1 45%;
-    max-width: 48%;
-  }
 }
 
 @media (max-width: 768px) {
@@ -364,15 +354,6 @@ html,body {
     font-size: 14px;
   }
 
-  .services .service-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .service-card {
-    width: 100%;
-    max-width: 90%;
-  }
 
   .achievements-container {
     flex-direction: column;
@@ -426,10 +407,6 @@ html,body {
     font-size: 13px;
   }
 
-  .service-card h3 {
-    font-size: 16px;
-  }
-
   .projects .project-card h1 {
     font-size: 20px;
   }
@@ -465,4 +442,36 @@ html,body {
 .scroll-show {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .services {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .services h1 {
+    font-size: 20px;
+    line-height: 1.4;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .services p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .services .service-grid {
+    flex-direction: column; /* stack the cards */
+    align-items: center; /* center align cards */
+    gap: 15px;
+  }
+
+  .service-card {
+    width: 90%;
+    max-width: 350px;
+    text-align: center;
+  }
 }
