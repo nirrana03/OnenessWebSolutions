@@ -266,3 +266,74 @@ body {
 
   .cta h1 { font-size: 18px; }
 }
+
+/* ===== Final Mobile Center Alignment Fix ===== */
+@media (max-width: 768px) {
+  .services-section {
+    padding: 40px 15px;
+    text-align: center;
+  }
+
+  .intro,
+  .timeline,
+  .timeline-item,
+  .timeline-content,
+  .timeline-img,
+  .service-grid,
+  .cta {
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .timeline::before {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .timeline-item {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 30px 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .timeline-img img {
+    margin: 0 auto !important;
+  }
+
+  .timeline-content {
+    margin: 0 auto !important;
+    text-align: center !important;
+    padding: 10px 0 !important;
+  }
+
+  .timeline-dot {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .service-card {
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+
+  .cta {
+    text-align: center !important;
+    padding: 50px 20px !important;
+  }
+
+  .cta h1, .cta h3 {
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-img img {
+    max-width: 140px !important;
+  }
+  .intro .desc {
+    padding-bottom: 30px !important;
+  }
+}
