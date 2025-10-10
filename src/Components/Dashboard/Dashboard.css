@@ -69,7 +69,7 @@ html,body {
 .service-card {
   flex: 1;
   background: #f9f9f9;
-  padding: 20px;
+  padding: 30px;
   border-radius: 10px;
 }
 
@@ -476,6 +476,142 @@ html,body {
     width: 100%;
     max-width: 350px;
     text-align: center;
-    box-sizing: border-box; /* ensure padding doesn't increase width */
+    /* ensure padding doesn't increase width */
   }
 }
+
+/* ==============================
+   General Section Spacing
+============================== */
+.dashboard section {
+  margin-bottom: 80px; /* space between each section */
+  padding: 40px 20px;
+}
+
+.dashboard section:last-child {
+  margin-bottom: 0; /* remove gap after last section */
+}
+
+/* ==============================
+   Card & Text Spacing
+============================== */
+.service-card p {
+  margin: 10px 0; /* space between each line in service cards */
+  line-height: 1.6;
+}
+
+.service-card {
+  padding: 30px 25px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.achievement-card {
+  margin: 10px;
+  padding: 20px;
+}
+
+.info-container p {
+  margin: 8px 0 4px 0;
+}
+
+/* ==============================
+   Blog Section Enhancements
+============================== */
+.blog {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.blog-card {
+  gap: 20px;
+}
+
+.blog-content p {
+  line-height: 1.6;
+}
+
+/* ==============================
+   Responsive Section Spacing
+============================== */
+@media (max-width: 768px) {
+  .dashboard section {
+    margin-bottom: 60px;
+    padding: 30px 15px;
+  }
+
+  .service-card {
+    padding: 25px 20px;
+  }
+
+  .achievement-card {
+    padding: 15px;
+  }
+
+  .blog-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard section {
+    margin-bottom: 40px;
+    padding: 25px 10px;
+  }
+
+  .service-card p {
+    margin: 6px 0;
+  }
+}
+
+/* ==============================
+   Service Cards - Mobile Styling
+============================== */
+@media (max-width: 768px) {
+  .services-container {
+    display: flex;
+    flex-direction: column; /* stack vertically */
+    align-items: center; /* center the cards */
+    gap: 20px; /* space between each card */
+  }
+
+  .service-card {
+    width: 100%;
+    max-width: 90%; /* make it big but not full screen */
+    margin: 0 auto; /* center horizontally */
+    padding: 30px 25px; /* good inner padding */
+    border-radius: 18px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .service-card:hover {
+    transform: scale(1.02); /* small pop effect on tap/hover */
+  }
+
+  .service-card h3 {
+    font-size: 25px;
+    margin-bottom: 8px;
+  }
+
+  .service-card p {
+    font-size: 20px;
+    line-height: 1.8;
+  }
+}
+
+/* Extra small screens (mobile below 480px) */
+@media (max-width: 480px) {
+  .service-card {
+    width: 92%;
+    padding: 25px 20px;
+  }
+
+  .service-card h3 {
+    font-size: 18px;
+  }
+
+  .service-card p {
+    font-size: 14px;
+  }
+}
+

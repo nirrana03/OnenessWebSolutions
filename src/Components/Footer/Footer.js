@@ -37,7 +37,7 @@ const Footer = () => {
         <li><a href="/webdev">Web Development</a></li>
         <li><a href="/appdev">App Development</a></li>
         <li><a href="/digi-marketing">Digital Marketing</a></li>
-        <li><a href="/e-commerce">E-Commerce</a></li>
+        <li><a href="/ecommerce">E-Commerce</a></li>
         <li><a href="/uiux">Ui/Ux Design</a></li>
         <li><a href="/quality-analyst">Quality Analyst</a></li>
       
