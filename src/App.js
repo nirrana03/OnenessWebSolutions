@@ -3,17 +3,17 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
 import Dashboard from "./Components/Dashboard/Dasboard";
-import About from "./Components/About us/Aboutus";
+import About from "./Components/About_us/Aboutus";
 import Services from "./Components/Services/Services";
 import Portfolio from "./Components/Portfolio/Portfolio";
-import Contact from "./Components/Contact us/Contactus";
+import Contact from "./Components/Contact_us/Contactus";
 import Blog from "./Components/Blog/Blog";
 import Appdev from "./Components/Appdev/Appdev"
 import UiUx from "./Components/Uiux/Uiux"
 import Ecommerce from "./Components/E-Commerce/ECommerce"
 import Webdev from "./Components/Webdev/Webdev"
 import Digital from "./Components/Digital_Maketing/Digi"
-import Quality  from  "./Components/Quality Analyst/Quality"
+import Quality  from  "./Components/Quality_Analyst/Quality"
 
 import "./App.css";
 
