@@ -12,7 +12,7 @@ import Appdev from "./Components/Appdev/Appdev"
 import UiUx from "./Components/Uiux/Uiux"
 import Ecommerce from "./Components/E-Commerce/ECommerce"
 import Webdev from "./Components/Webdev/Webdev"
-import Digital from "./Components/Digital Marketing/Digi"
+import Digital from "./Components/Digital_Maketing/Digi"
 import Quality  from  "./Components/Quality Analyst/Quality"
 
 import "./App.css";
