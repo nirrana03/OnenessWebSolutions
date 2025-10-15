@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import "./Aboutus.css";
 import process from "../Assests/AboutUs_Process.jpeg";
-import expertTalk from "../Assests/Expert_Talk.jpeg";
+import expertTalk from "../Assests/expert_talk.jpeg";
 
 // Custom Scroll Animation Hook
 function useScrollAnimation() {
