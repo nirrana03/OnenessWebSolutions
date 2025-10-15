@@ -1,41 +1,57 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import logom from "../Assests/main-logo.png";
+import logoMain from "../Assests/main-logo.png";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
     <nav className="navbar">
-      <div className="logo">
-        <img src={logom} alt="Main-logo" />
+      {/* Logo */}
+      <div className="navbar-logo">
+        <img src={logoMain} alt="Main logo" className="navbar-logo-img" />
       </div>
 
       {/* Hamburger Icon */}
-      <div className={`hamburger ${isOpen ? "active" : ""}`} onClick={toggleMenu}>
+      <div
+        className={`navbar-hamburger ${menuOpen ? "navbar-hamburger-active" : ""}`}
+        onClick={toggleMenu}
+      >
         <span></span>
         <span></span>
         <span></span>
       </div>
 
-      {/* Links */}
-      <ul className={`nav-links ${isOpen ? "open" : ""}`}>
-        <li><Link to="/" onClick={toggleMenu}>Home</Link></li>
-        <li><Link to="/about" onClick={toggleMenu}>About</Link></li>
-        <li><Link to="/services" onClick={toggleMenu}>Services</Link></li>
-        <li><Link to="/portfolio" onClick={toggleMenu}>Our Work</Link></li>
-        <li><Link to="/blog" onClick={toggleMenu}>Blog</Link></li>
-        <li><Link to="/contact" onClick={toggleMenu}>Contact Us</Link></li>
-        <li className="mobile-btn"><Link to="/contact" onClick={toggleMenu}>Let's Talk</Link></li>
+      {/* Navigation Links */}
+      <ul className={`navbar-links ${menuOpen ? "navbar-links-open" : ""}`}>
+        <li className="navbar-item">
+          <Link to="/" onClick={toggleMenu} className="navbar-link">Home</Link>
+        </li>
+        <li className="navbar-item">
+          <Link to="/about" onClick={toggleMenu} className="navbar-link">About</Link>
+        </li>
+        <li className="navbar-item">
+          <Link to="/services" onClick={toggleMenu} className="navbar-link">Services</Link>
+        </li>
+        <li className="navbar-item">
+          <Link to="/portfolio" onClick={toggleMenu} className="navbar-link">Our Work</Link>
+        </li>
+        <li className="navbar-item">
+          <Link to="/blog" onClick={toggleMenu} className="navbar-link">Blog</Link>
+        </li>
+        <li className="navbar-item">
+          <Link to="/contact" onClick={toggleMenu} className="navbar-link">Contact Us</Link>
+        </li>
+        <li className="navbar-item navbar-mobile-btn">
+          <Link to="/contact" onClick={toggleMenu} className="navbar-btn">Let's Talk</Link>
+        </li>
       </ul>
 
       {/* Desktop Button */}
-      <button className="btn desktop-btn">Let's Talk</button>
+      <button className="navbar-btn navbar-desktop-btn">Let's Talk</button>
     </nav>
   );
 };

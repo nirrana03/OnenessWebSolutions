@@ -1,7 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "./Appdev.css";
-import appdev3 from "../Assests/appdev.jpg";
+import appdev1 from "../Assests/AppDev_Design_Based.jpeg";
+import appdev2 from "../Assests/AppDev_CloudBackend.jpeg";
+import appdev3 from "../Assests/AppDev_Monitoring.jpeg";
 
 // Animation variants
 const animations = {
@@ -32,7 +34,7 @@ const servicesData = [
       "Onenessweb graphic design team will work to explore and produce the right solution that matches the look and feel of the brand.",
       "Contact us now.",
     ],
-    img: "https://via.placeholder.com/350x200",
+    img: appdev1,
     textAnim: animations.slideLeft,
     imgAnim: animations.slideRight,
   },
@@ -42,7 +44,7 @@ const servicesData = [
       "Our deep experience in Fintech, Luxury and Travel fields and the highly custom APIs and backend solutions will make the difference to set up the most appropriate environment to ensure the best performance of your app.",
       "Our team experts in real-time data running in native app development for both iOS and Android operating systems, Cross-platform app, and modern web application in a mobile first approach will work to create the best app that fits your needs. Connect with us.",
     ],
-    img: "https://via.placeholder.com/350x200",
+    img: appdev2,
     textAnim: animations.slideRight,
     imgAnim: animations.slideImageDown,
   },
@@ -58,13 +60,13 @@ const servicesData = [
   },
 ];
 
-const Services = () => {
+const AppDevelopment = () => {
   return (
-    <div className="services-container">
-      {/* App Development (special case: full width, no image) */}
-      <div className="service-section app-dev">
+    <div className="appdev-container">
+      {/* App Development (Intro section) */}
+      <div className="appdev-section appdev-intro">
         <motion.div
-          className="service-text"
+          className="appdev-text"
           variants={animations.slideDown}
           initial="hidden"
           whileInView="visible"
@@ -89,14 +91,14 @@ const Services = () => {
         </motion.div>
       </div>
 
-      {/* Other services */}
+      {/* Other Services */}
       {servicesData.map((service, index) => (
         <div
           key={index}
-          className={`service-section ${index % 2 !== 0 ? "reverse" : ""}`}
+          className={`appdev-section ${index % 2 !== 0 ? "appdev-section-reverse" : ""}`}
         >
           <motion.div
-            className="service-text"
+            className="appdev-text"
             variants={service.textAnim}
             initial="hidden"
             whileInView="visible"
@@ -111,7 +113,7 @@ const Services = () => {
           <motion.img
             src={service.img}
             alt={service.title}
-            className="service-image"
+            className="appdev-image"
             variants={service.imgAnim}
             initial="hidden"
             whileInView="visible"
@@ -123,4 +125,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default AppDevelopment;

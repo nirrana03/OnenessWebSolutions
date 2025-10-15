@@ -4,15 +4,14 @@ import logo1 from "../Assests/project-plan.png";
 import logo2 from "../Assests/clients.png";
 import logo3 from "../Assests/award.png";
 import logo4 from "../Assests/team.png";
-import blog from "../Assests/blog.jpg";
-import hero from "../Assests/hero.jpg";
+import blogImg from "../Assests/Dashboard_Blog.jpeg";
+import heroImg from "../Assests/Dashboard_Hero.jpeg";
 
 const Dashboard = () => {
   const achievementsRef = useRef(null);
 
   useEffect(() => {
-    // Counter Animation
-    const counters = achievementsRef.current.querySelectorAll(".counter");
+    const counters = achievementsRef.current.querySelectorAll(".dashboard-achievements-counter");
     let hasAnimated = false;
 
     const animateCounters = () => {
@@ -48,9 +47,8 @@ const Dashboard = () => {
 
     observer.observe(achievementsRef.current);
 
-    // Scroll Animation for sections (excluding hero)
     const allElements = document.querySelectorAll(
-      ".dashboard section:not(.hero)"
+      ".dashboard section:not(.dashboard-hero-section)"
     );
 
     const scrollObserver = new IntersectionObserver(
@@ -78,9 +76,9 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
-      {/* Hero Section (No Scroll Animation) */}
-      <section className="hero">
-        <div className="hero-text">
+      {/* Hero Section */}
+      <section className="dashboard-hero-section">
+        <div className="dashboard-hero-text">
           <h1>Bringing Your Ideas to Reality with Digital Solutions</h1>
           <p>
             You have the idea to disrupt an industry and we believe in
@@ -88,13 +86,13 @@ const Dashboard = () => {
           </p>
           <button className="btn">Let's Get Started</button>
 
-          <div className="info-container">
-            <div className="info-row">
-              <div className="info-column">
+          <div className="dashboard-hero-info">
+            <div className="dashboard-hero-info-row">
+              <div className="dashboard-hero-info-col">
                 <h3>6+</h3>
                 <p>Years in Industry</p>
               </div>
-              <div className="info-column">
+              <div className="dashboard-hero-info-col">
                 <h3>50+</h3>
                 <p>Clients</p>
               </div>
@@ -102,13 +100,13 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className="hero-image">
-          <img src={hero} alt="Hero" />
+        <div className="dashboard-hero-image">
+          <img src={heroImg} alt="Hero" />
         </div>
       </section>
 
-      {/* Other Sections (Animate on Scroll) */}
-      <section className="services">
+      {/* Services Section */}
+      <section className="dashboard-services-section">
         <h3>Services</h3>
         <h1>
           Reimagine digital products, from concept to launch with our expertise
@@ -117,8 +115,9 @@ const Dashboard = () => {
           We are a small team with a big heart and believe we can bring your
           idea to life through scalable and sustainable design solutions.
         </p>
-        <div className="service-grid">
-          <div className="service-card">
+
+        <div className="dashboard-services-grid">
+          <div className="dashboard-services-card">
             <h3>Research</h3>
             <p>Heuristic Analysis</p>
             <p>Design Audit</p>
@@ -126,7 +125,7 @@ const Dashboard = () => {
             <p>UX Research</p>
             <p>Usability Testing</p>
           </div>
-          <div className="service-card">
+          <div className="dashboard-services-card">
             <h3>Design</h3>
             <p>User Experience Design</p>
             <p>User Interface Design</p>
@@ -134,7 +133,7 @@ const Dashboard = () => {
             <p>System Design</p>
             <p>Interaction Design</p>
           </div>
-          <div className="service-card">
+          <div className="dashboard-services-card">
             <h3>Development</h3>
             <p>Front-end Development</p>
             <p>Mobile Applications</p>
@@ -145,57 +144,44 @@ const Dashboard = () => {
         </div>
       </section>
 
-      <section className="achievements" ref={achievementsRef}>
+      {/* Achievements Section */}
+      <section className="dashboard-achievements-section" ref={achievementsRef}>
         <h1>Our Achievements</h1>
         <h3>
           From early-stage startups to renowned brands, we have plenty of
           stories to share.
         </h3>
-        <div className="achievements-container">
-          <div className="achievement-card">
-            <div className="info-container">
-              <img src={logo1} alt="completed projects" />
-              <p>Projects Completed</p>
-              <span className="counter" data-target="150">
-                0+
-              </span>
-            </div>
+
+        <div className="dashboard-achievements-container">
+          <div className="dashboard-achievement-card">
+            <img src={logo1} alt="completed projects" />
+            <p>Projects Completed</p>
+            <span className="dashboard-achievements-counter" data-target="150">0+</span>
           </div>
 
-          <div className="achievement-card">
-            <div className="info-container">
-              <img src={logo2} alt="satisfied clients" />
-              <p>Satisfied Clients</p>
-              <span className="counter" data-target="120">
-                0+
-              </span>
-            </div>
+          <div className="dashboard-achievement-card">
+            <img src={logo2} alt="satisfied clients" />
+            <p>Satisfied Clients</p>
+            <span className="dashboard-achievements-counter" data-target="120">0+</span>
           </div>
 
-          <div className="achievement-card">
-            <div className="info-container">
-              <img src={logo3} alt="awards" />
-              <p>Awards Won</p>
-              <span className="counter" data-target="10">
-                0+
-              </span>
-            </div>
+          <div className="dashboard-achievement-card">
+            <img src={logo3} alt="awards" />
+            <p>Awards Won</p>
+            <span className="dashboard-achievements-counter" data-target="10">0+</span>
           </div>
 
-          <div className="achievement-card">
-            <div className="info-container">
-              <img src={logo4} alt="members" />
-              <p>Team Members</p>
-              <span className="counter" data-target="12">
-                0+
-              </span>
-            </div>
+          <div className="dashboard-achievement-card">
+            <img src={logo4} alt="members" />
+            <p>Team Members</p>
+            <span className="dashboard-achievements-counter" data-target="12">0+</span>
           </div>
         </div>
       </section>
 
-      <section className="projects">
-        <div className="project-card">
+      {/* Projects Section */}
+      <section className="dashboard-projects-section">
+        <div className="dashboard-project-card">
           <h1>Checkout our recent projects</h1>
           <h3>
             From mobile apps to web apps, we make businesses come alive across
@@ -205,26 +191,26 @@ const Dashboard = () => {
         </div>
       </section>
 
-      <section className="blog">
-        <div className="blog-card">
-          <div className="blog-image">
-            <img src={blog} alt="Blog Thumbnail" />
+      {/* Blog Section */}
+      <section className="dashboard-blog-section">
+        <div className="dashboard-blog-card">
+          <div className="dashboard-blog-image">
+            <img src={blogImg} alt="Blog Thumbnail" />
           </div>
-          <div className="blog-content">
-            <span className="blog-tag">Blog</span>
+          <div className="dashboard-blog-content">
+            <span className="dashboard-blog-tag">Blog</span>
             <h2>
               Comparing the Performance of a Mobile App built in Native platform
               and cross-platform
             </h2>
-            <p className="blog-author">By Bhaumik Prajapati on 24 April, 2023</p>
-            <a href="#" className="blog-link">
-              View all blogs
-            </a>
+            <p className="dashboard-blog-author">By Bhaumik Prajapati on 24 April, 2023</p>
+            <a href="#" className="dashboard-blog-link">View all blogs</a>
           </div>
         </div>
       </section>
 
-      <section className="cta">
+      {/* CTA Section */}
+      <section className="dashboard-cta-section">
         <h3>Have an idea?</h3>
         <h1>Let's build together and make it a reality.</h1>
         <button className="btn">Get in Touch</button>

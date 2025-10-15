@@ -1,24 +1,49 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./Aboutus.css";
-import illustration1 from "../Assests/illustration1.png";
-import expertTalk from "../Assests/expert_talk.jpeg";
+import process from "../Assests/AboutUs_Process.jpeg";
+import expertTalk from "../Assests/Expert_Talk.jpeg";
+
+// Custom Scroll Animation Hook
+function useScrollAnimation() {
+  const refs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target); // Animate once
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    refs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  return refs;
+}
 
 // Hero Section
-function HeroSection() {
+function HeroSection({ addRef }) {
   return (
-    <section className="about-hero-section">
+    <section ref={(el) => (addRef.current[0] = el)} className="about-hero-section fade-up">
       <div className="hero-container">
         <p className="hero-subtitle">Our Process</p>
-        <h1 className="hero-title">
-          Seamless process to empower your business
-        </h1>
+        <h1 className="hero-title">Seamless process to empower your business</h1>
         <p className="hero-description">
           With our tailored process, we aim to deliver a product that not only
           meets your current needs but also sets the stage for your future
           growth.
         </p>
         <div className="hero-image-wrapper">
-          <img src={illustration1} alt="Our process" className="hero-image" />
+          <img src={process} alt="Our process" className="hero-image" />
         </div>
       </div>
     </section>
@@ -26,18 +51,16 @@ function HeroSection() {
 }
 
 // Steps Section
-function StepsSection() {
+function StepsSection({ addRef }) {
   return (
-    <section className="steps-section">
+    <section ref={(el) => (addRef.current[1] = el)} className="steps-section fade-left">
       <div className="steps-container">
         <h2 className="steps-title">For Startups and Enterprises</h2>
         <h1 className="steps-subtitle">Build. Iterate. Launch.</h1>
 
         <div className="step">
           <h3 className="step-number">Step-1</h3>
-          <h2 className="step-heading">
-            Understand idea and find target users.
-          </h2>
+          <h2 className="step-heading">Understand idea and find target users.</h2>
           <p className="step-text">
             We start by conducting thorough discussions to understand your
             business goals, target audience, and project requirements. This
@@ -80,9 +103,9 @@ function StepsSection() {
 }
 
 // Values Section
-function ValuesSection() {
+function ValuesSection({ addRef }) {
   return (
-    <section className="values-section">
+    <section ref={(el) => (addRef.current[2] = el)} className="values-section fade-right">
       <div className="values-container">
         <h4 className="values-label">Values</h4>
         <h2 className="values-title">
@@ -126,9 +149,9 @@ function ValuesSection() {
 }
 
 // Expert Talk Section
-function ExpertTalk() {
+function ExpertTalk({ addRef }) {
   return (
-    <section className="expert-section">
+    <section ref={(el) => (addRef.current[3] = el)} className="expert-section fade-up">
       <div className="expert-container">
         <div className="expert-image">
           <img src={expertTalk} alt="Development Expert" />
@@ -148,12 +171,14 @@ function ExpertTalk() {
 
 // Main AboutUs Component
 export default function AboutUs() {
+  const refs = useScrollAnimation();
+
   return (
     <div className="about-us-page">
-      <HeroSection />
-      <StepsSection />
-      <ValuesSection />
-      <ExpertTalk />
+      <HeroSection addRef={refs} />
+      <StepsSection addRef={refs} />
+      <ValuesSection addRef={refs} />
+      <ExpertTalk addRef={refs} />
     </div>
   );
 }

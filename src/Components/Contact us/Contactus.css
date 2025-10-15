@@ -16,6 +16,7 @@
   width: 100%;
   margin: 0 auto 1% auto;
   padding: 0 13%;
+  padding-top: 20px;
 }
 
 /* Small heading text */
@@ -118,8 +119,6 @@ button:hover {
 }
 
 
-
-
 /* MAP SECTION STYLES */
 .map-section {
   display: flex;
@@ -144,8 +143,8 @@ button:hover {
 
 .contact-info h2 {
   margin-bottom: 25px;
-  font-size: 1.6rem;
-  font-weight: bold;
+  font-size: 2rem;
+  font-weight: 400;
   color: #333;
 }
 
@@ -217,8 +216,6 @@ button:hover {
 }
 
 
-
-
 /* EXPLORE PROJECTS CARD STYLES */
 
 /* Section styling (full width, background color) */
@@ -244,7 +241,7 @@ button:hover {
 /* Title */
 .explore-title {
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 500;
   color: #333;
   margin-bottom: 16px;
 }
@@ -252,6 +249,7 @@ button:hover {
 /* Description text */
 .explore-description {
   font-size: 1rem;
+  font-weight: lighter;
   color: #444;
   margin-bottom: 24px;
   line-height: 1.5;
@@ -285,4 +283,17 @@ button:hover {
   .explore-description {
     font-size: 0.95rem;
   }
+}
+
+
+/* SCROLL ANIMATION */
+.fade-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

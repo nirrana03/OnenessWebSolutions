@@ -1,438 +1,315 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-html,body {
+html, body {
   margin: 0;
-  width: 100%;
+  padding: 0;
   font-family: "Poppins", sans-serif;
-  background: #fff;
   color: #333;
+  background: #fff;
   overflow-x: hidden;
   box-sizing: border-box;
 }
 
-.hero {
+.dashboard {
+  text-align: center;
+}
+
+/* General Button */
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  color: white;
+}
+
+/* Hero Section */
+.dashboard-hero-section {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 40px;
   text-align: left;
-  max-width: 100%;
-  overflow-x: hidden;
-  margin: 0 auto;
+  padding: 20px 40px;
 }
 
-.hero-text h1 {
+.dashboard-hero-text h1 {
   font-weight: lighter;
+  margin-bottom: 15px;
 }
 
-.hero-text p {
-  font-weight: lighter;
+.dashboard-hero-text p {
   color: #706f6f;
+  font-weight: lighter;
+  margin-bottom: 20px;
 }
 
-.hero .btn {
+.dashboard-hero-section .btn {
   background-color: rgb(116, 200, 211);
   color: black;
 }
 
-.hero .btn:hover{
+.dashboard-hero-section .btn:hover {
   background-color: white;
   border: 2px solid black;
 }
 
-.services{
-  max-width: 100%;
-  overflow-x: hidden;
-  margin: 0 auto;
-}
-
-.services h3 {
-  font-weight: lighter;
-  color: #706f6f;
-  text-align: center;
-}
-
-.services h1 {
-  font-weight: lighter;
-}
-
-.services p {
-  color: #706f6f;
-}
-
-.services .service-grid {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-}
-
-.service-card {
-  flex: 1;
-  background: #f9f9f9;
-  padding: 30px;
+.dashboard-hero-image img {
+  width: 100%;
+  height: auto;
   border-radius: 10px;
 }
 
-.services .service-grid .service-card h3 {
-  font-weight: 500;
-  color: black;
-  text-decoration: underline;
-  text-decoration-color: rgb(116, 200, 211);
-  text-decoration-thickness: 2px;
+.dashboard-hero-info {
+  padding-top: 20px;
 }
 
-.achievements .achievements-grid {
+.dashboard-hero-info-row {
   display: flex;
-  justify-content: center;
-  gap: 40px;
-  font-weight: bold;
+  gap: 30px;
 }
 
-.achievements {
-  background: rgb(232, 227, 254);
-  max-width: 100vw;
+.dashboard-hero-info-col h3 {
   margin: 0;
-  padding: 60px 20px;
-  box-sizing: border-box;
-  text-align: center;
-  max-width: 100%;
-  overflow-x: hidden;
-  margin: 0 auto;
 }
 
-.achievements h1 {
+.dashboard-hero-info-col p {
   font-weight: lighter;
-  color: black;
 }
 
-.achievements h3 {
+/* Services Section */
+.dashboard-services-section {
+  padding: 60px 20px;
+}
+
+.dashboard-services-section h3 {
+  color: #706f6f;
+  font-weight: lighter;
+}
+
+.dashboard-services-section h1 {
+  font-weight: lighter;
+}
+
+.dashboard-services-section p {
   font-weight: lighter;
   color: #706f6f;
 }
 
-.achievements-container {
+.dashboard-services-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.dashboard-services-card {
+  flex: 1 1 100px;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.dashboard-services-card p {
+  line-height: 2;
+}
+
+.dashboard-services-card h3 {
+  color: black;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: rgb(116, 200, 211);
+  text-decoration-thickness: 2px;
+  margin-bottom: 15px;
+}
+
+/* Achievements Section */
+.dashboard-achievements-section {
+  background: rgb(232, 227, 254);
+  padding: 40px 20px 60px 20px;
+}
+
+.dashboard-achievements-section h1 {
+  font-weight: lighter;
+  color: black;
+  padding-bottom: 20px;
+}
+
+.dashboard-achievements-section h3 {
+  font-weight: lighter;
+  color: #706f6f;
+}
+
+.dashboard-achievements-container {
+  margin-top: 30px;
   display: flex;
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-.achievement-card {
+.dashboard-achievement-card {
   flex: 1 1 250px;
-  /* All cards flexible but equal min width */
   max-width: 300px;
-  min-height: 200px;
-  /* Same height */
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
   transition: transform 0.3s ease;
 }
 
-.achievement-card:hover {
+.dashboard-achievement-card:hover {
   transform: translateY(-5px);
 }
 
-.info-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-weight: lighter;
-}
-
-.info-container img {
+.dashboard-achievement-card img {
   width: 50px;
   height: 50px;
 }
 
+.dashboard-achievements-counter {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ffaa00;
+  display: block;
+  margin-top: 10px;
+}
 
-.projects {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Projects Section */
+.dashboard-projects-section {
   padding: 60px 20px;
   max-width: 100%;
-  overflow-x: hidden;
+  margin-top: 40px;
+}
+
+.dashboard-project-card {
+  background: #e6f0ff;
+  border-radius: 10px;
+  padding: 30px;
+  height: 280px;
   margin: 0 auto;
 }
-
-.projects .project-card {
-  background: #e6f0ff;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  margin-top: 20px;
-  width: 1800px;
-  height: 250px;
-  max-width: 90%;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  overflow-x: hidden;
-}
-
-.project-card h1 {
+.dashboard-project-card h1 {
   font-weight: lighter;
+  padding-bottom: 16px;
   color: black;
 }
 
-.project-card h3 {
-  font-weight: lighter;
+.dashboard-project-card h3 {
   color: #706f6f;
+  padding-bottom: 16px;
+  font-weight: lighter;
 }
 
-.project-card .btn {
-  background-color: #333;
-  color: white;
+.dashboard-project-card .btn {
+  background: #333;
+  color: #fff;
 }
 
-.project-card .btn:hover{
-  background-color: black;
+.dashboard-project-card .btn:hover {
+  background: black;
 }
 
-
-.blog {
+/* Blog Section */
+.dashboard-blog-section {
   display: flex;
-  justify-content: center;   /* centers the card */
+  justify-content: center;
   padding: 40px 20px;
 }
 
-
-.blog-card {
+.dashboard-blog-card {
   display: flex;
-  align-items: center;       /* vertical alignment */
+  align-items: center;
   background: #fff;
-  border: 1px solid #e5e5e5; /* light border like in screenshot */
   border-radius: 12px;
-  max-width: 850px;
-  width: 100%;
-  overflow: hidden;
+  border: 1px solid #e5e5e5;
   padding: 20px;
-  width: 100%;
   max-width: 100%;
-  box-sizing: border-box;
-  overflow-x: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
-.blog-image {
-  flex: 0 0 140px;           /* fixed width image column */
-  margin-right: 20px;
+.dashboard-blog-card:hover {
+  transform: translateY(-5px);
 }
 
-.blog-image img {
-  width: 200px;
+.dashboard-blog-image img {
+  width: 250px;
   height: 200px;
-  border-radius: 8px;        /* matches the soft rounded corners */
   display: block;
+  border-radius: 8px;
 }
 
-.blog-content {
+.dashboard-blog-content {
   flex: 1;
   text-align: left;
+  padding-left: 20px;
 }
 
-.blog-tag {
-  font-size: 14px;
-  font-weight: 500;
+.dashboard-blog-tag {
   color: #555;
-  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 14px;
   display: block;
+  margin-bottom: 8px;
 }
 
-.blog-content h2 {
-  font-size: 18px;
-  font-weight: 400;          /* lighter heading */
+.dashboard-blog-content h2 {
   color: #222;
-  margin: 6px 0 10px;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 10px 0;
   line-height: 1.5;
 }
 
-.blog-author {
+.dashboard-blog-author {
   font-size: 14px;
   color: #777;
   margin-bottom: 12px;
 }
 
-.blog-link {
-  font-size: 14px;
-  font-weight: 400;
+.dashboard-blog-link {
   color: #706f6f;
+  font-size: 14px;
   text-decoration: underline;
   text-decoration-color: rgb(116, 200, 211);
   text-decoration-thickness: 2px;
   transition: 0.3s;
 }
 
-.blog-link:hover {
+.dashboard-blog-link:hover {
   color: #007bff;
 }
 
-
-.cta {
+/* CTA Section */
+.dashboard-cta-section {
   background: #324456;
   color: white;
-  max-width: 100vw;
-  margin: 0;
-  padding: 60px 20px;
-  box-sizing: border-box;
-  max-width: 100%;
-  overflow-x: hidden;
-  margin: 0 auto;
+  padding: 40px 20px;
 }
 
-.cta h3 {
+.dashboard-cta-section h3 {
   font-weight: lighter;
+  padding-bottom: 10px;
 }
 
-.cta h1 {
+.dashboard-cta-section h1 {
   font-weight: 200;
+  padding-bottom: 20px;
 }
 
-.cta .btn {
+.dashboard-cta-section .btn {
   background-color: rgb(116, 200, 211);
   color: black;
 }
 
-.info-container {
-  padding-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 0px;
-  /* space between rows */
-  font-family: 'Poppins', sans-serif;
-
-  align-items: flex-start;
-  /* aligns content to left */
-  text-align: left;
-  /* makes text align left */
+.dashboard-cta-section .btn:hover {
+  background-color: #3fb0c7;;
 }
 
-.info-row {
-  display: flex;
-  gap: 30px;
-}
-
-/* Existing styles remain as is... */
-
-/* ----------------- Responsive Styles ----------------- */
-@media (max-width: 1024px) {
-
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-  }
-
-  .hero-text {
-    max-width: 90%;
-  }
-
-  .hero-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
-}
-
-@media (max-width: 768px) {
-
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-    padding: 20px;
-  }
-
-  .hero-text h1 {
-    font-size: 24px;
-  }
-
-  .hero-text p {
-    font-size: 14px;
-  }
-
-
-  .achievements-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .achievement-card {
-    max-width: 90%;
-    width: 100%;
-  }
-
-  .projects .project-card {
-    width: 100%;
-    max-width: 1200px;
-    height: auto;
-    padding: 40px 20px;
-  }
-
-  .blog-card {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .blog-image {
-    max-width: 100%;
-    width: 100%;
-  }
-
-  .blog-content {
-    text-align: center;
-    padding: 20px;
-  }
-
-  .cta h1 {
-    font-size: 22px;
-    line-height: 1.4;
-  }
-}
-
-@media (max-width: 480px) {
-  
-  .body{
-    overflow-x: hidden;
-  }
-
-  .hero-text h1 {
-    font-size: 20px;
-  }
-
-  .hero-text p {
-    font-size: 13px;
-  }
-
-  .projects .project-card h1 {
-    font-size: 20px;
-  }
-
-  .projects .project-card h3 {
-    font-size: 14px;
-  }
-
-  .blog-content h2 {
-    font-size: 18px;
-  }
-
-  .cta h1 {
-    font-size: 18px;
-  }
-}
-
-.counter {
-  font-size: 28px;
-  font-weight: bold;
-  color: #e69354;
-  margin-top: 10px;
-  transition: all 0.3s ease;
-}
-
-/* Scroll animation styles */
+/* Scroll Animations */
 .scroll-hidden {
   opacity: 0;
   transform: translateY(60px);
@@ -444,174 +321,81 @@ html,body {
   transform: translateY(0);
 }
 
-/* Responsive styling */
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .dashboard-hero-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .dashboard-hero-text {
+    max-width: 90%;
+  }
+
+  .dashboard-hero-image img {
+    width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
-  .services {
-    padding: 20px;
-    text-align: center;
-    overflow-x: hidden; /* prevent any horizontal overflow */
-  }
-
-  .services h1 {
-    font-size: 20px;
-    line-height: 1.4;
-    text-align: center;
-    margin: 10px 0;
-  }
-
-  .services p {
-    font-size: 14px;
-    text-align: center;
-  }
-
-  .services .service-grid {
+  .dashboard-services-grid {
     flex-direction: column;
     align-items: center;
-    gap: 15px;
-    width: 100%;
-    margin: 0 auto;
   }
 
-  .service-card {
-    width: 100%;
+  .dashboard-services-card{
+    width: 80%; /* makes the card appear bigger but still smaller than full width */
     max-width: 350px;
+    margin-bottom: 20px; /* space between cards */
     text-align: center;
-    /* ensure padding doesn't increase width */
-  }
-}
-
-/* ==============================
-   General Section Spacing
-============================== */
-.dashboard section {
-  margin-bottom: 80px; /* space between each section */
-  padding: 40px 20px;
-}
-
-.dashboard section:last-child {
-  margin-bottom: 0; /* remove gap after last section */
-}
-
-/* ==============================
-   Card & Text Spacing
-============================== */
-.service-card p {
-  margin: 10px 0; /* space between each line in service cards */
-  line-height: 1.6;
-}
-
-.service-card {
-  padding: 30px 25px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-.achievement-card {
-  margin: 10px;
-  padding: 20px;
-}
-
-.info-container p {
-  margin: 8px 0 4px 0;
-}
-
-/* ==============================
-   Blog Section Enhancements
-============================== */
-.blog {
-  margin-top: 60px;
-  margin-bottom: 60px;
-}
-
-.blog-card {
-  gap: 20px;
-}
-
-.blog-content p {
-  line-height: 1.6;
-}
-
-/* ==============================
-   Responsive Section Spacing
-============================== */
-@media (max-width: 768px) {
-  .dashboard section {
-    margin-bottom: 60px;
-    padding: 30px 15px;
   }
 
-  .service-card {
-    padding: 25px 20px;
+  .dashboard-blog-card {
+    flex-direction: column;
+    text-align: center;
   }
 
-  .achievement-card {
-    padding: 15px;
+  .dashboard-blog-content {
+    padding-left: 0;
   }
 
-  .blog-card {
-    padding: 20px;
+  .dashboard-achievements-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
-}
+
+    .dashboard-achievement-card {
+    width: 80%; /* makes the card appear bigger but still smaller than full width */
+    max-width: 350px;
+    margin-bottom: 20px; /* space between cards */
+    text-align: center; /* centers text inside card */
+  }
+  }
 
 @media (max-width: 480px) {
-  .dashboard section {
-    margin-bottom: 40px;
-    padding: 25px 10px;
-  }
-
-  .service-card p {
-    margin: 6px 0;
-  }
-}
-
-/* ==============================
-   Service Cards - Mobile Styling
-============================== */
-@media (max-width: 768px) {
-  .services-container {
-    display: flex;
-    flex-direction: column; /* stack vertically */
-    align-items: center; /* center the cards */
-    gap: 20px; /* space between each card */
-  }
-
-  .service-card {
-    width: 100%;
-    max-width: 90%; /* make it big but not full screen */
-    margin: 0 auto; /* center horizontally */
-    padding: 30px 25px; /* good inner padding */
-    border-radius: 18px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-
-  .service-card:hover {
-    transform: scale(1.02); /* small pop effect on tap/hover */
-  }
-
-  .service-card h3 {
-    font-size: 25px;
-    margin-bottom: 8px;
-  }
-
-  .service-card p {
+  .dashboard-hero-text h1,
+  .dashboard-project-card h1,
+  .dashboard-services-section h1,
+  .dashboard-cta-section h1 {
     font-size: 20px;
-    line-height: 1.8;
-  }
-}
-
-/* Extra small screens (mobile below 480px) */
-@media (max-width: 480px) {
-  .service-card {
-    width: 92%;
-    padding: 25px 20px;
   }
 
-  .service-card h3 {
-    font-size: 18px;
-  }
-
-  .service-card p {
+  .dashboard-hero-text p,
+  .dashboard-services-section p,
+  .dashboard-project-card h3 {
     font-size: 14px;
   }
-}
 
+  .dashboard-achievements-section h1 {
+    font-size: 30px;
+  }
+
+  .dashboard-achievements-section h3 {
+    font-size: 15px;
+  }
+
+  .dashboard-blog-content h2 {
+    font-size: 18px;
+  }
+}

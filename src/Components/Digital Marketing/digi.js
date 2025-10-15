@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import "./digi.css";
+import "./Digi.css";
+import digiImg1 from "../Assests/Digi_Strategy.jpeg";
+import digiImg2 from "../Assests/Digi_SEO.jpeg";
 
 // Animation variants
 const animations = {
@@ -31,7 +33,7 @@ const servicesData = [
       "For your Digital Strategy…",
       "Contact us now.",
     ],
-    img: "https://via.placeholder.com/350x200",
+    img: digiImg1,
     textAnim: animations.slideLeft,
     imgAnim: animations.slideRight,
   },
@@ -42,19 +44,19 @@ const servicesData = [
       "For your Enterprise SEO Inquiry…",
       "Contact us now",
     ],
-    img: "https://via.placeholder.com/350x200",
+    img: digiImg2,
     textAnim: animations.slideRight,
     imgAnim: animations.slideImageDown,
   },
 ];
 
-const Services = () => {
+const DigitalMarketing = () => {
   return (
-    <div className="services-container">
-      {/* App Development (special case: full width, no image) */}
-      <div className="service-section digi">
+    <div className="digi-container">
+      {/* Intro Section */}
+      <div className="digi-section digi-intro">
         <motion.div
-          className="service-text"
+          className="digi-text"
           variants={animations.slideDown}
           initial="hidden"
           whileInView="visible"
@@ -62,19 +64,24 @@ const Services = () => {
         >
           <h2>Digital Marketing</h2>
           <p>
-            Digital marketing of your products is critical to stay ahead of your competitors. The past decade has opened a whole new set of opportunities for any business on the internet. At Onenessweb Solutions, we have a team of accomplished and skilled marketers who have a flair for storytelling and ardor for Digital Marketing campaign. Market trends, SEO, website optimization, targeted keywords, result-oriented strategies and captivates a huge audience globally, that deliver the desired outcomes.
+            Digital marketing of your products is critical to stay ahead of your competitors. The
+            past decade has opened a whole new set of opportunities for any business on the
+            internet. At Onenessweb Solutions, we have a team of accomplished and skilled marketers
+            who have a flair for storytelling and ardor for Digital Marketing campaign. Market
+            trends, SEO, website optimization, targeted keywords, result-oriented strategies and
+            captivates a huge audience globally, that deliver the desired outcomes.
           </p>
         </motion.div>
       </div>
 
-      {/* Other services */}
+      {/* Other Services */}
       {servicesData.map((service, index) => (
         <div
           key={index}
-          className={`service-section ${index % 2 !== 0 ? "reverse" : ""}`}
+          className={`digi-section ${index % 2 !== 0 ? "digi-section-reverse" : ""}`}
         >
           <motion.div
-            className="service-text"
+            className="digi-text"
             variants={service.textAnim}
             initial="hidden"
             whileInView="visible"
@@ -89,7 +96,7 @@ const Services = () => {
           <motion.img
             src={service.img}
             alt={service.title}
-            className="service-image"
+            className="digi-image"
             variants={service.imgAnim}
             initial="hidden"
             whileInView="visible"
@@ -101,4 +108,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default DigitalMarketing;

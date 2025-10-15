@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./Blog.css";
 import blog1 from "../Assests/blog1.jpeg";
 import blog2 from "../Assests/blog2.jpeg";
@@ -7,7 +7,36 @@ import blog4 from "../Assests/blog4.jpeg";
 import blog5 from "../Assests/blog5.jpeg";
 import profileIcon from "../Assests/profile_icon.png";
 
+// Custom scroll animation hook
+function useScrollAnimation() {
+  const refs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target); // Animate once only
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    refs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  return refs;
+}
+
 const Blog = () => {
+  const refs = useScrollAnimation();
+
   const blogs = [
     {
       id: 1,
@@ -82,7 +111,7 @@ const Blog = () => {
   );
 
   const ExploreProjectsCard = () => (
-    <section className="explore-section">
+    <section ref={(el) => (refs.current[3] = el)} className="explore-section fade-right">
       <div className="explore-card">
         <h2 className="explore-title">Checkout our recent projects</h2>
         <p className="explore-description">
@@ -96,7 +125,7 @@ const Blog = () => {
 
   return (
     <section className="blog-wrapper">
-      <div className="blog-container">
+      <div ref={(el) => (refs.current[0] = el)} className="blog-container fade-up">
         <h2 className="blog-title">Blog</h2>
 
         {/* Featured Section: First two blogs highlighted */}
@@ -108,17 +137,19 @@ const Blog = () => {
             <BlogCard blog={blogs[1]} variant="small" />
           </div>
         </div>
+      </div>
 
-        {/* Grid Section: Remaining blogs displayed in a grid */}
-        <div className="blog-grid">
-          {blogs.slice(2).map((blog) => (
-            <BlogCard key={blog.id} blog={blog} variant="grid" />
-          ))}
-        </div>
+      {/* Grid Section: Remaining blogs displayed in a grid */}
+      <div ref={(el) => (refs.current[1] = el)} className="blog-grid fade-left">
+        {blogs.slice(2).map((blog) => (
+          <BlogCard key={blog.id} blog={blog} variant="grid" />
+        ))}
       </div>
 
       {/* Explore Projects CTA */}
-      <ExploreProjectsCard />
+      <div ref={(el) => (refs.current[2] = el)}>
+        <ExploreProjectsCard />
+      </div>
     </section>
   );
 };
